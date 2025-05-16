@@ -270,7 +270,7 @@ section.visible {
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+  transition: opacity 2.5s ease-out, transform 2.5s ease-out;
 }
 
 .reveal.visible {
@@ -282,7 +282,7 @@ section.visible {
 .fade-left {
   opacity: 0;
   transform: translateX(-40px);
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+  transition: opacity 2.5s ease-out, transform 2.5s ease-out;
 }
 
 .fade-left.visible {
@@ -294,7 +294,7 @@ section.visible {
 .fade-right {
   opacity: 0;
   transform: translateX(40px);
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+  transition: opacity 2.5s ease-out, transform 2.5s ease-out;
 }
 
 .fade-right.visible {
@@ -306,7 +306,7 @@ section.visible {
 .zoom-in {
   opacity: 0;
   transform: scale(0.8);
-  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+  transition: opacity 2.5s ease-out, transform 2.5s ease-out;
 }
 
 .zoom-in.visible {
@@ -317,7 +317,7 @@ section.visible {
 .rotate-in {
   opacity: 0;
   transform: rotate(-10deg) scale(0.9);
-  transition: all 2s ease-out;
+  transition: all 2.5s ease-out;
 }
 
 .rotate-in.visible {
@@ -329,12 +329,12 @@ section.visible {
 .bounce-in {
   opacity: 0;
   transform: translateY(60px);
-  transition: all 1.5s ease-out;
+  transition: all 2.5s ease-out;
 }
 
 .bounce-in.visible {
   opacity: 1;
-  animation: bounce 1.5s ease-out;
+  animation: bounce 2.5s ease-out;
 }
 
 @keyframes bounce {
