@@ -114,15 +114,20 @@ function animate() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   for (let h of hearts) {
+    h.pulse += 0.05; // increase pulse
+    h.size = h.baseSize + Math.sin(h.pulse) * 4;
+  
     drawHeart(h.x, h.y, h.size, h.alpha);
     h.y -= h.speed;
     h.x += h.drift;
-
+  
     if (h.y < -50) {
       h.y = canvas.height + 50;
       h.x = Math.random() * canvas.width;
+      h.pulse = Math.random() * Math.PI * 2;
     }
   }
+  
 
   requestAnimationFrame(animate);
 }
@@ -132,4 +137,16 @@ animate();
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+});
+
+
+hearts.push({
+  x: Math.random() * canvas.width,
+  y: Math.random() * canvas.height,
+  size: Math.random() * 20 + 10,
+  baseSize: Math.random() * 20 + 10,
+  speed: Math.random() * 1 + 0.5,
+  alpha: Math.random() * 0.5 + 0.3,
+  drift: (Math.random() - 0.5) * 0.5,
+  pulse: Math.random() * Math.PI * 2,
 });
