@@ -150,3 +150,18 @@ hearts.push({
   drift: (Math.random() - 0.5) * 0.5,
   pulse: Math.random() * Math.PI * 2,
 });
+
+// Intersection Observer for fade-in effect
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+document.querySelectorAll('.reveal').forEach(elem => {
+  observer.observe(elem);
+});

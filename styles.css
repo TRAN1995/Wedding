@@ -8,6 +8,18 @@ body {
   background-size: cover;
 }
 
+
+.couple-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
 .invitation-card {
   max-width: 600px;
   margin: 2rem auto;
@@ -207,3 +219,18 @@ section.visible {
   z-index: -1;
   pointer-events: none;
 }
+
+/* Animation Styles */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
