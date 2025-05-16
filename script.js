@@ -72,87 +72,30 @@ function closeSplash(person) {
   setTimeout(() => splash.style.display = "none", 500);
 }
 
+// Heart Animation background
+const heartContainer = document.querySelector('.love-background');
+const heartEmojis = ['💖','💗','💘','💝','💕','💞','💓','💟','❤️','❣️'];
 
-const canvas = document.getElementById("heart-canvas");
-const ctx = canvas.getContext("2d");
+for (let i = 0; i < 30; i++) {
+  const heart = document.createElement('span');
+  heart.innerText = heartEmojis[Math.floor(Math.random() * heartEmojis.length)];
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+  const size = Math.random() * 1.5 + 1;
+  const left = Math.random() * 100;
+  const delay = Math.random() * 5;
+  const duration = 6 + Math.random() * 4;
 
-let hearts = [];
+  heart.style.left = `${left}vw`;
+  heart.style.fontSize = `${size}rem`;
+  heart.style.animationDelay = `${delay}s`;
+  heart.style.animationDuration = `${duration}s`;
 
-for (let i = 0; i < 40; i++) {
-  hearts.push({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    size: Math.random() * 20 + 10,
-    speed: Math.random() * 1 + 0.5,
-    alpha: Math.random() * 0.5 + 0.3,
-    drift: (Math.random() - 0.5) * 0.5,
-  });
+  heartContainer.appendChild(heart);
 }
 
-function drawHeart(x, y, size, alpha) {
-  ctx.save();
-  ctx.translate(x, y);
-  ctx.scale(size / 50, size / 50);
-  ctx.globalAlpha = alpha;
 
-  ctx.beginPath();
-  ctx.moveTo(25, 15);
-  ctx.bezierCurveTo(25, 0, 0, 0, 0, 15);
-  ctx.bezierCurveTo(0, 30, 25, 45, 25, 45);
-  ctx.bezierCurveTo(25, 45, 50, 30, 50, 15);
-  ctx.bezierCurveTo(50, 0, 25, 0, 25, 15);
-  ctx.fillStyle = "#e91e63";
-  ctx.fill();
-  ctx.restore();
-}
-
-// Animation
-function animate() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  for (let h of hearts) {
-    h.pulse += 0.05; // increase pulse
-    h.size = h.baseSize + Math.sin(h.pulse) * 4;
-  
-    drawHeart(h.x, h.y, h.size, h.alpha);
-    h.y -= h.speed;
-    h.x += h.drift;
-  
-    if (h.y < -50) {
-      h.y = canvas.height + 50;
-      h.x = Math.random() * canvas.width;
-      h.pulse = Math.random() * Math.PI * 2;
-    }
-  }
-  
-
-  requestAnimationFrame(animate);
-}
-
-animate();
-
-window.addEventListener("resize", () => {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-});
-
-
-hearts.push({
-  x: Math.random() * canvas.width,
-  y: Math.random() * canvas.height,
-  size: Math.random() * 20 + 10,
-  baseSize: Math.random() * 20 + 10,
-  speed: Math.random() * 1 + 0.5,
-  alpha: Math.random() * 0.5 + 0.3,
-  drift: (Math.random() - 0.5) * 0.5,
-  pulse: Math.random() * Math.PI * 2,
-});
-
-
-
+// Scroll Animation
+// Animation Style
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
