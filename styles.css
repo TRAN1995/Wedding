@@ -34,6 +34,131 @@ body {
 }
 
 
+/* format text information */
+.invitation-text {
+  text-align: center;
+  color: #4e342e;
+  margin: 1.5rem 0 2rem;
+  font-family: 'Georgia', serif;
+}
+
+.invitation-text .intro {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #6d4c41;
+}
+
+.event-detail .label {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #d81b60;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.event-detail .time {
+  font-size: 1.2rem;
+  color: #c2185b;
+}
+
+.event-detail .date {
+  font-size: 1.1rem;
+  margin: 0.5rem 0;
+}
+
+.event-detail .lunar {
+  font-style: italic;
+  color: #7b1fa2;
+  margin-bottom: 1rem;
+}
+
+.event-detail .location {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #5d4037;
+}
+
+/* Add information wedding */
+
+.wedding-timeline {
+  background: #fffef9;
+  padding: 2rem 1rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  font-family: 'Georgia', serif;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.timeline-title {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  color: #e91e63;
+  margin-bottom: 2rem;
+}
+
+.timeline {
+  position: relative;
+  border-left: 4px solid #ddd;
+  margin: 2rem auto;
+  padding-left: 2rem;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.timeline-icon {
+  position: absolute;
+  left: -35px;
+  top: 0;
+  font-size: 1.8rem;
+  background: #fff;
+  color: #e91e63;
+}
+
+.timeline-content {
+  padding-left: 1rem;
+}
+
+.event-title {
+  font-size: 1.5rem;
+  color: #e91e63;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.event-time {
+  font-weight: bold;
+  color: #444;
+  font-size: 1.1rem;
+}
+
+.event-note {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-footer {
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  font-style: italic;
+  border-top: 1px solid #ccc;
+  padding-top: 1rem;
+  color: #5a3e36;
+}
+
+
+
+
+
+
+
+
 
 .invitation-card {
   max-width: 600px;
